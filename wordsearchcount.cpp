@@ -56,25 +56,26 @@ int main(int argc, char* argv[])
 		  if(fin.eof()) { break;}
 		  else {
 			  word_insert(head,word,files[i]);
-
+        cout<< word<<" ";
 		  }
 		}
 		fin.close();
 	}
-  Word* temp=head;
-  while(temp!=NULL){
+  /*Word* temp=head;
+  while(temp){
     temp->sort_list();
     temp=temp->link();
-  }
-	while(true){
+  }*/
+	/*while(true){
 	  string user_word;
     int threshold;
-	  cin.ignore(1000,'\n');
+
 	  cout<<"Enter word: ";
 	  cin>>user_word;
     if(user_word=="-1"){
 		  break;
 	  }
+    cin.ignore(1000,'\n');
     cout<<"Enter threshold: ";
     cin>>threshold;
     Word* search=head;
@@ -84,15 +85,15 @@ int main(int argc, char* argv[])
       }
       search=search->link();
     }
-	  File* f=search->f_head();
-    File* temp_f=f;
-    while((temp_f->get_count()>=threshold)&& (temp_f!=NULL)){
-      std::cout << "File: " << temp_f->get_fname()<<"; Count: "<<temp_f->get_count()<<endl;
-      temp_f=temp_f->link();
+
+    List* temp_l=search->get_head();
+    while((temp_l->count()>=threshold)&& (temp_l!=NULL)){
+      std::cout << "File: " << temp_l->fname()<<"; Count: "<<temp_l->count()<<endl;
+      temp_l=temp_l->link();
     }
 
-	  cin.ignore(1000,'\n');
-	}
+	  cin.ignore(1000,'\n');*/
+
   return 0;
 
 }

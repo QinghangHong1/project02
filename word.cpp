@@ -7,21 +7,17 @@ using namespace std;
 
 Word::Word(string word_name,string file_name){
   word=word_name;
-  List l(file_name);
+  head=new List(file_name);
   link_field=NULL;
   prev_field=NULL;
 }
 string Word::get_word(){
   return word;
 }
-size_t Word::get_count(string file_name){
-  return l.get_freq(file_name);
-}
-File* Word::f_head(){
-  return l.get_head();
-}
+
+
 void Word::update_list(string file_name){
-  l.update_file(file_name);
+  list_update(head,file_name);
 }
 Word* Word::link(){
   return link_field;
@@ -36,7 +32,10 @@ void Word::set_prev(Word* previous){
   prev_field=previous;
 }
 void Word::sort_list(){
-  l.sort();
+  sort(head);
+}
+List* Word::get_head(){
+  return head;
 }
 Word* search(Word* head,string word_name){
   Word* temp=head;
@@ -57,6 +56,7 @@ int length(Word* head){
   }
   return count;
 }
+
 void word_insert(Word*& head, string word_name, string file_name){
   if(head==NULL){
     Word* new_word=new Word(word_name,file_name);
