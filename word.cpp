@@ -61,6 +61,7 @@ void word_insert(Word*& head, string word_name, string file_name){
   if(head==NULL){
     Word* new_word=new Word(word_name,file_name);
     head=new_word;
+    cout<<"add word "<<word_name<<" to the empty word list with file "<<file_name;
   }else if(search(head,word_name)==NULL){//word does not exist in the word list
     Word* new_word=new Word(word_name,file_name);
     Word* temp=head;
@@ -73,11 +74,12 @@ void word_insert(Word*& head, string word_name, string file_name){
           new_word->set_prev(temp->prev());
           temp->prev()->set_link(new_word);
           temp->set_prev(new_word);
-
+          cout<<"add new word "<<word_name<<"to the middle word list"<<" and file "<<file_name<<" ";
         }else{//temp is the head
           new_word->set_link(temp);
           temp->set_prev(new_word);
           head=new_word;
+          cout<<"add new word "<<word_name<<"to the begginning word list"<<" and file "<<file_name<<" ";
         }
       }
       temp=temp->link();
@@ -89,9 +91,11 @@ void word_insert(Word*& head, string word_name, string file_name){
       }
       new_word->set_prev(t);
       t->set_link(new_word);
+      cout<<"add new word "<<word_name<<"to the end of word list"<<" and file "<<file_name<<" ";
     }
   }else{//word in the list
     Word* found=search(head,word_name);
     found->update_list(file_name);
+    cout<<"found word: "<<word_name<<" and update the file "<<file_name<<" ";
   }
 }
