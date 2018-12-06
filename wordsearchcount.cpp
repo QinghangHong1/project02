@@ -55,18 +55,19 @@ int main(int argc, char* argv[])
 		  fin>>word;
 		  if(fin.eof()) { break;}
 		  else {
-			  word_insert(head,word,files[i]);
-        cout<< word<<" ";
+		    
+		    word_insert(head,word,files[i]);
+		    
 		  }
 		}
 		fin.close();
 	}
-  /*Word* temp=head;
+  Word* temp=head;
   while(temp){
     temp->sort_list();
     temp=temp->link();
-  }*/
-	/*while(true){
+  }
+	while(true){
 	  string user_word;
     int threshold;
 
@@ -92,7 +93,8 @@ int main(int argc, char* argv[])
       temp_l=temp_l->link();
     }
 
-	  cin.ignore(1000,'\n');*/
+	  cin.ignore(1000,'\n');
+	}
 
   return 0;
 

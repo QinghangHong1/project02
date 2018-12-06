@@ -36,4 +36,5 @@ Word* search(Word* head,string word_name);
 
 void word_insert(Word*& head, string word_name, string file_name);
 int length(Word* head);
+void printList(Word* head);
 #endif
