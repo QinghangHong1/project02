@@ -88,9 +88,15 @@ int main(int argc, char* argv[])
     }
 
     List* temp_l=search->get_head();
-    while((temp_l->count()>=threshold)&& (temp_l!=NULL)){
+    while((temp_l!=NULL)) ){
       std::cout << "File: " << temp_l->fname()<<"; Count: "<<temp_l->count()<<endl;
       temp_l=temp_l->link();
+      if(temp_l==NULL){
+	break;
+      }
+      if(temp_l->count()<threshold){
+	break;
+      }
     }
 
 	  cin.ignore(1000,'\n');

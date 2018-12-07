@@ -27,16 +27,16 @@ int main(){
 
   word_insert(head,"app","test1.txt");
   
-  word_insert(head,"appl","test1.txt");
-  word_insert(head,"appl","test2.txt");
-  word_insert(head,"banana","test1.txt");
-  word_insert(head,"apply","test2.txt");
+   word_insert(head,"where","test1.txt");
+  word_insert(head,"where","test2.txt");
+  word_insert(head,"about","test1.txt");
+  word_insert(head,"orange","test2.txt");
   word_insert(head,"orange","test1.txt");
-   word_insert(head,"apple","test1.txt");
-  word_insert(head,"apple","test2.txt");
-  word_insert(head,"apple","test2.txt");
-  word_insert(head,"apple","test1.txt");
-  word_insert(head,"apple","test1.txt");
+   word_insert(head,"File","test1.txt");
+  word_insert(head,"you","test2.txt");
+  word_insert(head,"you","test2.txt");
+  word_insert(head,"get","test1.txt");
+  word_insert(head,"test","test1.txt");
 
   word_insert(head,"app","test1.txt");
   
